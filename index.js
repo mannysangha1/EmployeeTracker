@@ -104,12 +104,20 @@ function init() {
             },
             {
                 type: "input",
-                message: "What is the last name of the employee you would like to add",
+                message: "What is the last name of the employee you would like to add?",
                 name: "lastName"
             },
             {
-                
+                type: "input",
+                message: "What is the role of the employee you would like to add?",
+                name: "role"
             },
+            {
+                type: "input",
+                message: "Who is the manager of the employee you would like to add?",
+                name: "manager"
+            }
+        ]).then(function(res){
             
-        }])
+        })
     }
