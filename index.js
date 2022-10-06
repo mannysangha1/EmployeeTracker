@@ -80,10 +80,17 @@ function init() {
 }
 
     function viewDepartments(){
-        connection.query("SELECT * FROM employee", (err, data)=>{
+        connection.query("SELECT * FROM department", (err, data)=>{
             if(err) throw err;
             console.table(data);
             init()
         })
 }
 
+    function viewRoles(){
+        connection.query("SELECT * FROM role", (err, data)=>{
+            if(err) throw err;
+            console.table(data);
+            init()
+        })
+}
