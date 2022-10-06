@@ -40,6 +40,34 @@ function init() {
             viewEmployees();
 
         }
-        
+        if(answers.userChoice==="View All Departments"){
+            // View All departments
+            viewDepartments();
+        }
+        if(answers.userChoice==="View All Roles"){
+            // View All Roles
+            viewRoles();
+        }
+        if(answers.userChoice==="Add Employee"){
+            // Add employee 
+            addEmployee();
+        }
+        if(answers.userChoice==="Add a Department"){
+            // Add or change Department
+            addDepartment();
+        }
+        if(answers.userChoice==="Add a Role"){
+            // Add or change role
+            addRole();
+        }
+        if(answers.userChoice==="Update Employee Role"){
+            // Update employee role
+            updateEmployeeRole();
+        }
+        if(answers.userChoice==="Quit"){
+            // QUIT
+            process.exit()
+        }
     })
 }
+
