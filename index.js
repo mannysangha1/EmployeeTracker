@@ -77,6 +77,13 @@ function init() {
             console.table(data);
             init()
         })
-    }
+}
 
-    
+    function viewDepartments(){
+        connection.query("SELECT * FROM employee", (err, data)=>{
+            if(err) throw err;
+            console.table(data);
+            init()
+        })
+}
+
