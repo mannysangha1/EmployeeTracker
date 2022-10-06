@@ -94,3 +94,22 @@ function init() {
             init()
         })
 }
+    
+    function addEmployee(){
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "What is the first name of the employee you would like to add?",
+                name: "firstName"
+            },
+            {
+                type: "input",
+                message: "What is the last name of the employee you would like to add",
+                name: "lastName"
+            },
+            {
+                
+            },
+            
+        }])
+    }
