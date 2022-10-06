@@ -35,6 +35,11 @@ function init() {
         name: "userChoice" 
     }).then(function(answers){
         console.log(answers.userChoice);
+        if(answers.userChoice==="View All Employees"){
+            // Get Request to return all employess
+            viewEmployees();
+
+        }
         
     })
 }
