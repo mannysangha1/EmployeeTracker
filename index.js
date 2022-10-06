@@ -1,7 +1,8 @@
 const mysql = require('mysql');
 const inquirer = require('inquirer');
 const Employee = require('./constructors/employee')
-const Role = require('./constructors/role')
+const Role = require('./constructors/role');
+const ListPrompt = require('inquirer/lib/prompts/list');
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -26,3 +27,14 @@ connection.connect(function(err) {
 
 init ();
 
+function init() {
+    inquirer.prompt({
+        type: "list",
+        message: "What would you like to do?",
+        choices: ["View all employees", "View all departments", "View all Roles", "Add Employee", "Add a Department", "Add a Role", "Update Employee Role", "Quit"],
+        name: "userChoice" 
+    }).then(function(answers){
+        console.log(answers.userChoice);
+        
+    })
+}
