@@ -71,3 +71,12 @@ function init() {
     })
 }
 
+    function viewEmployees(){
+        connection.query("SELECT * FROM employee", (err, data)=>{
+            if(err) throw err;
+            console.table(data);
+            init()
+        })
+    }
+
+    
