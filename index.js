@@ -133,7 +133,15 @@ function init() {
                             role_id = data[i].id;
                         }
                     }
-                    
+                    connection.query("SELECT id, first_name FROM employee", (err, data)=>{
+                        if(err) throw err;
+                        for(let i = 0; i<data.lenght;i++){
+                            if(manager===data[i].firstName){
+                                manager_id = data[i].id;
+                            }
+                        }
+                        
+                    })
                 })
             }
         })
