@@ -118,6 +118,23 @@ function init() {
                 name: "manager"
             }
         ]).then(function(res){
-            
+            let firstName = res.firstName;
+            let lastName = res.lastName;
+            var role_id;
+            var manager_id;
+            let role = res.role;
+            let manager = res.manager;
+            convertNameId();
+            function convertNameId(){
+                connection.query("SELECT id, title from role", (err, data)=>{
+                    if(err) throw err;
+                    for(let i = 0; i<data.lenght;i++){
+                        if(role===data[i].title){
+                            role_id = data[i].id;
+                        }
+                    }
+                    
+                })
+            }
         })
     }
