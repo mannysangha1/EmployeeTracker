@@ -140,7 +140,11 @@ function init() {
                                 manager_id = data[i].id;
                             }
                         }
-                        
+                        var newEmployee = new Employee(firstName, lastName, role_id, manager_id);
+                        console.log(newEmployee);
+                        connection.query("INSERT INTO employee (first_name,last_name,role_id,manager_id) VALUES(?,?,?,?)", [newEmployee.firstName,newEmployee.lastName,newEmployee.role_id,newEmployee.manager_id ], function (err, data) {
+                            
+                        })
                     })
                 })
             }
