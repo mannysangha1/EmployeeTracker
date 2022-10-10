@@ -143,10 +143,36 @@ function init() {
                         var newEmployee = new Employee(firstName, lastName, role_id, manager_id);
                         console.log(newEmployee);
                         connection.query("INSERT INTO employee (first_name,last_name,role_id,manager_id) VALUES(?,?,?,?)", [newEmployee.firstName,newEmployee.lastName,newEmployee.role_id,newEmployee.manager_id ], function (err, data) {
-                            
+                            if (err) throw err;
+                            console.log(`added ${newEmployee.firstName} to employee database`);
                         })
                     })
+                    init();
                 })
             }
         })
     }
+
+ function addDepartment(){
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "What is the name of the department you would like to add?",
+                name: "name"
+            }
+        ]).then(function(res){
+            //console log 
+            connection.query("INSERT INTO department (name) VALUES (?)",[res.name],function(err, data) {
+                if (err) throw err;
+                console.log(`added $(res.name) to department database`);
+            })
+        })
+    }
+
+function addRole(){
+    inquirer.prompt([
+        {
+            
+        }
+    ])
+}
