@@ -186,5 +186,28 @@ function addRole(){
             message: "What is the department of this role?",
             name: "department"
         }
-    ])
+    ]).then(function(res){
+        let title = res.title;
+        let salary = res.salary;
+        let department = res.department;
+        let department_id;
+        convertDepartmentId();
+        function convertDepartmentId(){
+            connection.query("SELECT id,name FROM department",(err, data)=>{
+                if (err) throw err;
+                for(let i = 0;i<data.lenght;i++){
+                    if(department===data[i].name){
+                        department_id = data[i].id;
+                    }
+                }
+                var newRole = new Role(title,salary,department_id);
+                console.log(newRole);
+                connection.query("INSERT INTO role (title,salary,department_id) VALUES(?,?,?)" [newRole.title,newRole.salary,newRole.department_id], function (err, data){
+                    if (err) throw err;
+                    console.log(`added ${newRole.title} to role database`);
+                })
+                init();
+            })
+        }
+    })
 }
