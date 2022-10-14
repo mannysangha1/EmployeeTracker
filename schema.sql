@@ -18,3 +18,7 @@ CREATE TABLE employee(
     manager_id INT DEFAULT NULL,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE role(
+
+)
