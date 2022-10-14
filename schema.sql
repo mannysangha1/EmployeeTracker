@@ -27,3 +27,11 @@ CREATE TABLE role(
     PRIMARY KEY (id)
 );
 
+INSERT INTO department (name)
+values("Sales");
+INSERT INTO department(name)
+values("Engineering");
+INSERT INTO department(name)
+values("Marketing");
+INSERT INTO department(name)
+values("Management");
