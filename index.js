@@ -211,3 +211,36 @@ function addRole(){
         }
     })
 }
+
+function updateEmployeeRole(){
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is the role you would like to assign this employee",
+            name: "role"
+        },
+        {
+            type: "input",
+            message: "What role would you like to assign this employee?",
+            name: "role"
+        }
+    ]).then(function(res){
+        let name = res.name;
+        let role = res.role;
+        let role_id;
+        //check name match
+        connection.query("SELECT id,title FROM role",(err, data)=>{
+            if (err) throw err;
+            for(let i = 0;i<data.lenght;i++){
+                if(role===data[i].title){
+                role_id = data[i].id;
+                }
+            }
+            connection.query("UPDATE employee SET role_id = ? WHERE first_name = ?", [role_id,name], function (err, data){
+                if(err) throw err;
+                console.log("Employee Role Updated")
+            })
+            init();
+        })
+    })
+}
