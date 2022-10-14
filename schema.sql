@@ -35,3 +35,18 @@ INSERT INTO department(name)
 values("Marketing");
 INSERT INTO department(name)
 values("Management");
+
+INSERT INTO role (title,salary,department_id)
+values("Jr Developer",60000,2);
+INSERT INTO role (title,salary,department_id)
+values("Sr Developer",110000,2);
+INSERT INTO role (title,salary,department_id)
+values("Sales Assistant",42000,1);
+INSERT INTO role (title,salary,department_id)
+values("Email Marketing Specialist",86000,3);
+INSERT INTO role (title,salary,department_id)
+values("Content Marketing Creator",67000,3);
+INSERT INTO role (title,salary,department_id)
+values("Sr Marketing Manager",200000,2);
+
+
