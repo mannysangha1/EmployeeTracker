@@ -2,18 +2,17 @@ const mysql = require('mysql');
 const inquirer = require('inquirer');
 const Employee = require('./constructors/employee')
 const Role = require('./constructors/role');
-const ListPrompt = require('inquirer/lib/prompts/list');
 
 var connection = mysql.createConnection({
     host: "localhost",
 
     //port 
 
-    port: 3001,
+    port: 3306,
 
     //username
 
-    username: "root",
+    user: "root",
 
     //password
     password: "password",

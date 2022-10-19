@@ -36,6 +36,13 @@ values("Marketing");
 INSERT INTO department(name)
 values("Management");
 
+INSERT INTO employee (first_name,last_name,role_id,manager_id)
+values("Glen","Sturgis",1,3);
+INSERT INTO employee (first_name,last_name,role_id,manager_id)
+values("Garret","McNeil",2,4);
+INSERT INTO employee (first_name,last_name,role_id,manager_id)
+values("Jonah","Simms",4);
+
 INSERT INTO role (title,salary,department_id)
 values("Jr Developer",60000,2);
 INSERT INTO role (title,salary,department_id)
